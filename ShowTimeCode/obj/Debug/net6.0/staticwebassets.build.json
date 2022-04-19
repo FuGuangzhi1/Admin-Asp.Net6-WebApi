@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "GPkwra+KgjLbhRy4NOTk9reeyzGkj0Tq77BdcFXLPRQ=",
+  "Source": "ShowTimeCode",
+  "BasePath": "_content/ShowTimeCode",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ShowTimeCode\\wwwroot",
+      "Source": "ShowTimeCode",
+      "ContentRoot": "H:\\桌面\\ShowTimeCodeEnd\\ShowTimeCode\\wwwroot\\",
+      "BasePath": "_content/ShowTimeCode",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

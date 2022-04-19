@@ -1,0 +1,9 @@
+﻿2022-03-28 14:23:49,580| ERROR 
+Unable to resolve service for type 'Abstract_Fu.PersonalManagement.StudyInfo.IStudyInfoInterface' while attempting to activate 'ShowTimeCode.Controllers.PersonalManagement.StudyInfo.StudyInfoController'.
+--------------------------------
+2022-03-28 14:29:16,645| ERROR 
+Unable to resolve service for type 'Abstract_Fu.PersonalManagement.StudyInfo.IStudyInfoInterface' while attempting to activate 'ShowTimeCode.Controllers.PersonalManagement.StudyInfo.StudyInfoController'.
+--------------------------------
+2022-03-28 14:29:25,943| ERROR 
+Unable to resolve service for type 'Abstract_Fu.PersonalManagement.StudyInfo.IStudyInfoInterface' while attempting to activate 'ShowTimeCode.Controllers.PersonalManagement.StudyInfo.StudyInfoController'.
+--------------------------------

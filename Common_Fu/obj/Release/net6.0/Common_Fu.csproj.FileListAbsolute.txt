@@ -1,0 +1,12 @@
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\bin\Release\net6.0\Common_Fu.deps.json
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\bin\Release\net6.0\Common_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\bin\Release\net6.0\ref\Common_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\bin\Release\net6.0\Common_Fu.pdb
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.csproj.AssemblyReference.cache
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.GeneratedMSBuildEditorConfig.editorconfig
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.AssemblyInfoInputs.cache
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.AssemblyInfo.cs
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.csproj.CoreCompileInputs.cache
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\ref\Common_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\Common_Fu\obj\Release\net6.0\Common_Fu.pdb

@@ -1,0 +1,39 @@
+﻿2022-03-07 01:32:34,840| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 01:33:32,161| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 20:55:50,493| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 20:56:39,536| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 20:58:58,961| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 21:00:17,820| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 21:01:41,198| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 21:02:40,275| ERROR 
+试图加载格式不正确的程序。 (0x8007000B)
+--------------------------------
+2022-03-07 21:03:03,103| ERROR 
+试图加载格式不正确的程序。 (0x8007000B)
+--------------------------------
+2022-03-07 21:04:10,029| ERROR 
+试图加载格式不正确的程序。 (0x8007000B)
+--------------------------------
+2022-03-07 21:07:52,492| ERROR 
+试图加载格式不正确的程序。 (0x8007000B)
+--------------------------------
+2022-03-07 21:10:15,783| ERROR 
+The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+--------------------------------
+2022-03-07 21:17:37,112| ERROR 
+The instance of entity type 'UserFile' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+--------------------------------

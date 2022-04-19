@@ -1,0 +1,17 @@
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\EFCore_Fu.deps.json
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\EFCore_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\ref\EFCore_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\EFCore_Fu.pdb
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\Common_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\Common_Fu.pdb
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.csproj.AssemblyReference.cache
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.GeneratedMSBuildEditorConfig.editorconfig
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.AssemblyInfoInputs.cache
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.AssemblyInfo.cs
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.csproj.CoreCompileInputs.cache
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.csproj.CopyComplete
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\ref\EFCore_Fu.dll
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\obj\Release\net6.0\EFCore_Fu.pdb
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\Entities.dll
+H:\桌面\NewProject\ShowTimeCode\EFCore_Fu\bin\Release\net6.0\Entities.pdb

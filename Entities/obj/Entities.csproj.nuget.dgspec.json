@@ -1,0 +1,166 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\桌面\\ShowTimeCodeEnd\\Entities\\Entities.csproj": {}
+  },
+  "projects": {
+    "H:\\桌面\\ShowTimeCodeEnd\\Common_Fu\\Common_Fu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\桌面\\ShowTimeCodeEnd\\Common_Fu\\Common_Fu.csproj",
+        "projectName": "Common_Fu",
+        "projectPath": "H:\\桌面\\ShowTimeCodeEnd\\Common_Fu\\Common_Fu.csproj",
+        "packagesPath": "C:\\Users\\Administrator.DESKTOP-H6DDKC0\\.nuget\\packages\\",
+        "outputPath": "H:\\桌面\\ShowTimeCodeEnd\\Common_Fu\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator.DESKTOP-H6DDKC0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MiniExcel": {
+              "target": "Package",
+              "version": "[1.25.2, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.5.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.4, )"
+            },
+            "ServiceStack.Redis": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.2.88, )"
+            },
+            "UtilsSharp.RabbitMQ": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\桌面\\ShowTimeCodeEnd\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\桌面\\ShowTimeCodeEnd\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "H:\\桌面\\ShowTimeCodeEnd\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Administrator.DESKTOP-H6DDKC0\\.nuget\\packages\\",
+        "outputPath": "H:\\桌面\\ShowTimeCodeEnd\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator.DESKTOP-H6DDKC0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "H:\\桌面\\ShowTimeCodeEnd\\Common_Fu\\Common_Fu.csproj": {
+                "projectPath": "H:\\桌面\\ShowTimeCodeEnd\\Common_Fu\\Common_Fu.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

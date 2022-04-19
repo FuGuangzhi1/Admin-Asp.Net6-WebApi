@@ -1,0 +1,12 @@
+﻿2022-02-01 13:23:06,490| INFO Microsoft.Hosting.Lifetime 
+Application started. Press Ctrl+C to shut down.
+--------------------------------
+2022-02-01 13:23:06,496| INFO Microsoft.Hosting.Lifetime 
+Hosting environment: Production
+--------------------------------
+2022-02-01 13:23:06,496| INFO Microsoft.Hosting.Lifetime 
+Content root path: H:\桌面\NewProject\ShowTimeCode\ShowTimeCode\bin\Release\net6.0\publish\
+--------------------------------
+2022-02-01 13:44:05,419| INFO Microsoft.Hosting.Lifetime 
+Application is shutting down...
+--------------------------------
