@@ -1,11 +1,13 @@
 ﻿global using Microsoft.EntityFrameworkCore;
 using Common_Fu;
 using EFCore_Fu.Data.system;
+using EFCore_Fu.Data.Test;
 using EFCore_Fu.SoftDelete;
 using Entites.DomainModels.Account;
 using Entites.DomainModels.BaseModels;
 using Entites.DomainModels.Resource;
 using Entites.DomainModels.Role;
+using Entities.DomainModels;
 using Entities.DomainModels.Account;
 using Entities.DomainModels.RelationshipTable;
 using Entities.DomainModels.Study;
@@ -28,6 +30,7 @@ namespace EFCore_Fu
         public virtual DbSet<UserRole> UserRole { get; set; } = null!;
         public virtual DbSet<UserFile> UserFile { get; set; } = null!;
         public virtual DbSet<StudyInfo> StudyInfo { get; set; } = null!;
+        public virtual DbSet<TestTable> TestTable { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,6 +39,8 @@ namespace EFCore_Fu
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.AddSystemDefaultData();
+            modelBuilder.AddTsetData();
+          
             //全局过滤器
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {

@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "JeLHHGqwFgYUa+uK61L7FIXBg/IcIUv6i03D3dYzpaM=",
+  "Hash": "v5qkaqMb5C7jI7YHQynwhGITuceTVLsAEsxJtu0LVm4=",
   "Source": "ShowTimeCode",
   "BasePath": "_content/ShowTimeCode",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ShowTimeCode\\wwwroot",
+      "Source": "ShowTimeCode",
+      "ContentRoot": "H:\\桌面\\ShowTimeCodeEnd\\ShowTimeCode\\wwwroot\\",
+      "BasePath": "_content/ShowTimeCode",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

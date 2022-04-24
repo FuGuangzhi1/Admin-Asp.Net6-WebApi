@@ -11,7 +11,7 @@ namespace Common_Fu.ExeclHelper.Exensions
     {
         public static byte[] ExeclTobyte(this IWorkbook workBook)
         {
-            using MemoryStream memoryStream = new();
+            MemoryStream memoryStream = new();
             workBook.Write(memoryStream);
             byte[] data = memoryStream.ToArray();
             memoryStream.Write(data, 0, data.Length);

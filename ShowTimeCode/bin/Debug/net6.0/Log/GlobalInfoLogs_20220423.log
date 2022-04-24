@@ -1,0 +1,24 @@
+﻿2022-04-23 04:02:04,022| INFO Microsoft.Hosting.Lifetime 
+Now listening on: http://localhost:5140
+--------------------------------
+2022-04-23 04:02:04,029| INFO Microsoft.Hosting.Lifetime 
+Application started. Press Ctrl+C to shut down.
+--------------------------------
+2022-04-23 04:02:04,033| INFO Microsoft.Hosting.Lifetime 
+Hosting environment: Development
+--------------------------------
+2022-04-23 04:02:04,035| INFO Microsoft.Hosting.Lifetime 
+Content root path: H:\桌面\ShowTimeCodeEnd\ShowTimeCode\
+--------------------------------
+2022-04-23 04:38:54,413| INFO Microsoft.Hosting.Lifetime 
+Now listening on: http://localhost:5140
+--------------------------------
+2022-04-23 04:38:54,426| INFO Microsoft.Hosting.Lifetime 
+Application started. Press Ctrl+C to shut down.
+--------------------------------
+2022-04-23 04:38:54,429| INFO Microsoft.Hosting.Lifetime 
+Hosting environment: Development
+--------------------------------
+2022-04-23 04:38:54,431| INFO Microsoft.Hosting.Lifetime 
+Content root path: H:\桌面\ShowTimeCodeEnd\ShowTimeCode\
+--------------------------------

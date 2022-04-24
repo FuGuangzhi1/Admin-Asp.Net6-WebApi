@@ -13,7 +13,7 @@ namespace Realization_Fu
     public abstract class BaseServices : IBaseServices
     {
         //private readonly IEFCoreFactory _iEFCoreFactory;
-        private readonly MyDBContext? _dBContext = null;
+        private MyDBContext? _dBContext = null;
 
         public BaseServices(IEFCoreFactory EFCoreFactory)
         {
@@ -181,10 +181,24 @@ namespace Realization_Fu
             .SaveChangesAsync();
         #endregion
 
+        private bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    this._dBContext?.Dispose();
+                    this._dBContext = null;
+                }
+                this.disposed = true;
+            }
+        }
+
         public void Dispose()
         {
+            Dispose(true);
             GC.SuppressFinalize(this);
-            _dBContext?.DisposeAsync().AsTask().Wait();
         }
 
     }

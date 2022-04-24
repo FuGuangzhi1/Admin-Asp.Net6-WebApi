@@ -3,23 +3,34 @@ using Microsoft.AspNetCore.Authorization;
 namespace ShowTimeCode.Controllers.PersonalManagement.StudyInfo;
 
 using Common_Fu.ExeclHelper;
+using Common_Fu.ExeclHelper.Exensions;
 using Entities.DomainModels.Study;
 using Entities.ViewModels.Select;
 using Entities.ViewModels.Study;
 using Microsoft.EntityFrameworkCore;
 using NPOI.SS.UserModel;
 using ShowTimeCode.AOPFilter.DBOperation;
+using ShowTimeCode.AOPFilter.FiveFilters;
 using System.Linq;
 
 [AllowAnonymous]
 public class StudyInfoController : ApiClass
 {
     private readonly IStudyInfoInterface _interface;
-    public StudyInfoController(IStudyInfoInterface services) => this._interface = services;
+    private readonly IMyNpoiExeclHelper _myNpoiExeclHelper;
+
+    public StudyInfoController(IStudyInfoInterface services, IMyNpoiExeclHelper myNpoiExeclHelper)
+    {
+        this._interface = services;
+        this._myNpoiExeclHelper = myNpoiExeclHelper;
+    }
 
     [HttpGet("GetStudyInfoView")]
+    [ResponseCache(Duration = 3600)]
+  //  [TypeFilter(typeof(CustomResourceFilterAttribute))]
+
     public async Task<ApiFormat> GetStudyInfoViewAsync(string? studyInfoName, Guid? studyTypeId, int currentPage, int pageSize)
-       => base.Sussuc(massage: "表格数据加载成功", data: await this._interface.GetIQueryTable<StudyInfo>()
+       => base.Sussuc(massage: "表格数据加载成功", data: await this._interface.GetIQueryTable<StudyInfo>().AsNoTracking()
                .Join(this._interface.GetIQueryTable<StudyType>()
                , t1 => t1.StudyTypeId,
                t2 => t2.Id, (t1, t2) => new StudyInfoView
@@ -39,7 +50,7 @@ public class StudyInfoController : ApiClass
                .ToPage(x => x.CreateTime, true, currentPage, pageSize).AsQueryable()
                .ToListAsync(),
                tatol: await this._interface
-                .GetIQueryTable<StudyInfo>()
+                .GetIQueryTable<StudyInfo>().AsNoTracking()
                 .WhereIf(studyInfoName is null or "", x => x.StudyInfoName == studyInfoName)
                 .WhereIf(studyTypeId is null, x => x.StudyTypeId == studyTypeId)
                 .CountAsync());
@@ -65,16 +76,18 @@ public class StudyInfoController : ApiClass
                                       {
                                           Id = T1.Id.ToString(),
                                           Value = T1.StudyTypeName
-      
+
                                       }).ToListAsync());
     [HttpGet("GetStudyInfoExecl")]
-    public async Task GetStudyInfoExeclAsync(string? execlName)
+    public async Task<IActionResult> GetStudyInfoExeclAsync(string? execlName)
     {
-        IMyNpoiExeclHelper myNpoiExecl = new MyNpoiExeclHelper();
         ApiFormat format = await GetStudyInfoViewAsync(null, null, 1, 10);
-        IWorkbook wookBook = myNpoiExecl.CreateExecl<StudyInfoView>(format.Data, "sheet");
-        await using FileStream fileStream = new($@"H:\{execlName ?? Guid.NewGuid().ToString()}.xls", FileMode.Create);
-        wookBook.Write(fileStream);
+        IWorkbook wookBook = this._myNpoiExeclHelper.CreateExecl<StudyInfoView>(format.Data, "sheet");
+        byte[] stream = wookBook.ExeclTobyte();
+        return File(stream, " application/vnd.ms-excel", execlName);
+        //保存到电脑
+        //await using FileStream fileStream = new($@"H:\{execlName ?? Guid.NewGuid().ToString()}.xls", FileMode.Create);
+        //wookBook.Write(fileStream);
     }
 
 }

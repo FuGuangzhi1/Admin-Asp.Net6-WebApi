@@ -15,11 +15,80 @@ using Realization_Fu.PersonalManagement.StudyInfo;
 using ShowTimeCode.AOPFilter.FiveFilters;
 using ShowTimeCode.JWTHelper;
 using System.Text;
+using System.Reflection;
+using Abstract_Fu;
+using Realization_Fu;
+using Common_Fu.ExeclHelper;
+using ShowTimeCode.AOPFilter.DBOperation;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ShowTimeCode.Extensions;
 
 public static partial class Extensions
 {
+    public static IServiceCollection AddIOC(this IServiceCollection services)
+    {
+        services.AddTransient<IEFCoreFactory, EFCoreFactory>();
+        services.AddScoped<IMyNpoiExeclHelper, MyNpoiExeclHelper>();
+        return services;
+    }
+    public static IServiceCollection AddAutoIOC(this IServiceCollection services)
+    {
+        Type[] items = Assembly.Load("Realization_Fu").GetTypes();
+        Assembly.Load("Abstract_Fu").GetTypes().ToList().ForEach(type =>
+        {
+            if (type.IsInterface && type.Name.EndsWith("Interface"))
+            {
+                foreach (var item in items)
+                {
+                    if (item.IsClass && !item.IsAbstract && type.IsAssignableFrom(item))
+                    {
+                        services.AddScoped(type, item);
+                        break;
+                    }
+                }
+            }
+        });
+        //var allAbstract_Fu = Assembly.Load("Abstract_Fu");
+
+        //var aLLRealization_Fu = Assembly.Load("Realization_Fu");
+
+        //Type[] abstract_Fu = allAbstract_Fu.GetTypes();
+        //var abstract_FuList = abstract_Fu.ToList();
+        //Type[] realization_Fu = aLLRealization_Fu.GetTypes();
+        //var realization_FuList = realization_Fu.ToList();
+        //foreach (var i in abstract_FuList)
+        //{
+        //    var @interface = "Interface";
+        //    if (i.Name != "IBaseServices" && i.Name.Length > @interface.Length)
+        //    {
+        //        var size = i.Name.Length;
+        //        var iName = i.Name.Substring(size - @interface.Length, @interface.Length);
+        //        if (iName == @interface)
+        //        {
+        //            foreach (var s in realization_FuList)
+        //            {
+        //                var @Services = "Services";
+        //                if (s.Name != "BaseServices" && s.Name.Length > @Services.Length)
+        //                {
+        //                    iName = i.Name.Substring(0, size - @interface.Length);
+        //                    iName = iName.Substring(1, iName.Length - 1);
+        //                    var sName = s.Name.Substring(0, s.Name.Length - @Services.Length);
+        //                    if (iName == sName)
+        //                    {
+        //                        services.AddScoped(i, s);
+        //                        break;
+        //                    }
+        //                }
+        //            };
+        //        }
+        //    }
+        //};
+
+
+
+        return services;
+    }
     /// <summary>
     /// 全局过滤器配置
     /// </summary>
@@ -33,7 +102,7 @@ public static partial class Extensions
             options.Filters.Add(typeof(CustomAuthonizationFilterAttribute));
             options.Filters.Add(typeof(CustomExceptionFilterAttribute));
             options.Filters.Add(typeof(CustomResultFilterAttribute));
-           // options.Filters.Add(typeof(CustomResourceFilterAttribute));
+            // options.Filters.Add(typeof(CustomResourceFilterAttribute));
             //options.Filters.Add(typeof(ValidateModelAttribute));
             options.Filters.Add(new AuthorizeFilter());
 

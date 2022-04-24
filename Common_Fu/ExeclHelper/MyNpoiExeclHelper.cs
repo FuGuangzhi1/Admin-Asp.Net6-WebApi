@@ -13,7 +13,7 @@ namespace Common_Fu.ExeclHelper
         public IWorkbook CreateExecl<T>(IList<T> dataList, string sheetname)
         {
             //创建工作簿
-            IWorkbook workbook = new XSSFWorkbook(); //xls
+             IWorkbook workbook = new XSSFWorkbook(); //xls
             //workbook = new HSSFWorkbook(); //xlsx
             //创建工作表
             ISheet sheet = workbook.CreateSheet(sheetname);
@@ -67,7 +67,7 @@ namespace Common_Fu.ExeclHelper
             return workbook;
         }
 
-        public List<T> CreateList<T>(IWorkbook wook) 
+        public List<T>? CreateList<T>(IWorkbook wook)
         {
             int sheetIndexLength = wook.ActiveSheetIndex;
             for (int sheetIndex = 0; sheetIndex < sheetIndexLength; sheetIndex++)
@@ -75,18 +75,18 @@ namespace Common_Fu.ExeclHelper
                 ISheet sheet = wook.GetSheetAt(sheetIndex);
                 IRow heardRow = sheet.CreateRow(sheet.FirstRowNum);
                 if (heardRow is null) break;
-                int index = 0;
-                for (int i = 0; i < heardRow.LastCellNum; i++)
-                {
-                    ICell cell=heardRow.GetCell(i);
-                    if (cell is not null) 
-                    {
-                    
-                    }
-                }
+                //int index = 0;
+                //for (int i = 0; i < heardRow.LastCellNum; i++)
+                //{
+                //    ICell cell=heardRow.GetCell(i);
+                //    if (cell is not null) 
+                //    {
+
+                //    }
+                //}
 
             }
-            return default(List<T>);
+            return default;
         }
     }
 }
