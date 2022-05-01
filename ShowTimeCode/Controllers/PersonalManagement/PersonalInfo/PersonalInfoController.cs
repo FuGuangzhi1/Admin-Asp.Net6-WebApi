@@ -4,7 +4,6 @@ using Entites.DomainModels.Account;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ShowTimeCode.Controllers.PersonalManagement.PersonalInfo;
-[AllowAnonymous]
 public class PersonalInfoController : ApiClass
 {
     public record struct Data

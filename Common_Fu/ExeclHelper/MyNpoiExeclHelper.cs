@@ -1,5 +1,8 @@
-﻿using NPOI.SS.UserModel;
+﻿using NPOI.HSSF.UserModel;
+using NPOI.OpenXmlFormats.Wordprocessing;
+using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +13,26 @@ namespace Common_Fu.ExeclHelper
 {
     public class MyNpoiExeclHelper : IMyNpoiExeclHelper
     {
-        public IWorkbook CreateExecl<T>(IList<T> dataList, string sheetname)
+        public IWorkbook CreateExecl<T>(IList<T> dataList, string sheetname, bool isXlsx=false)
         {
+            IWorkbook workbook;
             //创建工作簿
-             IWorkbook workbook = new XSSFWorkbook(); //xls
-            //workbook = new HSSFWorkbook(); //xlsx
+            if (isXlsx)
+            {
+                workbook = new XSSFWorkbook(); //xls
+            }
+            else
+            {
+                workbook = new HSSFWorkbook(); //xlsx
+            }
+            workbook.CreateFont().FontName = "宋体";
+            //
             //创建工作表
             ISheet sheet = workbook.CreateSheet(sheetname);
             //反射获取列明
             Type type = typeof(T);
             //所有属性
             var propArray = type.GetProperties();
-
             //创建execl第一行数据（列名）
             {
                 IRow row = sheet.CreateRow(0);
@@ -35,6 +46,10 @@ namespace Common_Fu.ExeclHelper
                         {
                             ICell cell = row.CreateCell(index);
                             cell.SetCellValue(titleAttribute.Title);
+                            //设置文字对齐方式
+                            cell.CellStyle.Alignment = HorizontalAlignment.Center; //水平居中
+                            cell.CellStyle.VerticalAlignment = VerticalAlignment.Center; //垂直居中
+                            sheet.SetColumnWidth(index, 13 * 256);
                             index++;
                         }
                     }

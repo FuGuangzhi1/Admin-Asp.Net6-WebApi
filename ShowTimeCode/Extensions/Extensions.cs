@@ -1,26 +1,14 @@
-﻿using Abstract_Fu.Account;
-using Abstract_Fu.Home;
-using Abstract_Fu.PersonalManagement.PersonalInfo;
-using Abstract_Fu.PersonalManagement.StudyInfo;
-using Common_Fu.Redis;
+﻿using Common_Fu.Redis;
 using EFCore_Fu.EFCoreFactroy;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Realization_Fu.Account;
-using Realization_Fu.Home;
-using Realization_Fu.PersonalManagement.PersonalInfo;
-using Realization_Fu.PersonalManagement.StudyInfo;
 using ShowTimeCode.AOPFilter.FiveFilters;
 using ShowTimeCode.JWTHelper;
 using System.Text;
 using System.Reflection;
-using Abstract_Fu;
-using Realization_Fu;
 using Common_Fu.ExeclHelper;
-using ShowTimeCode.AOPFilter.DBOperation;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ShowTimeCode.Extensions;
 

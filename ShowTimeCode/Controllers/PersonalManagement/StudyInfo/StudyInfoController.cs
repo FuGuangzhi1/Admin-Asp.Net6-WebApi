@@ -8,12 +8,13 @@ using Entities.DomainModels.Study;
 using Entities.ViewModels.Select;
 using Entities.ViewModels.Study;
 using Microsoft.EntityFrameworkCore;
+using NPOI.SS.Formula.Functions;
 using NPOI.SS.UserModel;
 using ShowTimeCode.AOPFilter.DBOperation;
 using ShowTimeCode.AOPFilter.FiveFilters;
 using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
-[AllowAnonymous]
 public class StudyInfoController : ApiClass
 {
     private readonly IStudyInfoInterface _interface;
@@ -26,8 +27,8 @@ public class StudyInfoController : ApiClass
     }
 
     [HttpGet("GetStudyInfoView")]
-    [ResponseCache(Duration = 3600)]
-  //  [TypeFilter(typeof(CustomResourceFilterAttribute))]
+    //[ResponseCache(Duration = 3600)]
+    // [TypeFilter(typeof(CustomResourceFilterAttribute))]
 
     public async Task<ApiFormat> GetStudyInfoViewAsync(string? studyInfoName, Guid? studyTypeId, int currentPage, int pageSize)
        => base.Sussuc(massage: "表格数据加载成功", data: await this._interface.GetIQueryTable<StudyInfo>().AsNoTracking()
@@ -79,12 +80,20 @@ public class StudyInfoController : ApiClass
 
                                       }).ToListAsync());
     [HttpGet("GetStudyInfoExecl")]
-    public async Task<IActionResult> GetStudyInfoExeclAsync(string? execlName)
+    public async Task<IActionResult> GetStudyInfoExeclAsync(string? execlName, string? sheetName, bool? isXlsx = false)
     {
-        ApiFormat format = await GetStudyInfoViewAsync(null, null, 1, 10);
-        IWorkbook wookBook = this._myNpoiExeclHelper.CreateExecl<StudyInfoView>(format.Data, "sheet");
+        string contentType;
+        if (isXlsx is false)
+        {
+            contentType = "application/vnd.ms-excel";
+        }
+        else contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        var data = await this._interface.GetIQueryTable<StudyInfo>().AsNoTracking().ToListAsync();
+        IWorkbook wookBook = this._myNpoiExeclHelper.CreateExecl<StudyInfo>(data, sheetName ?? "sheet",
+            isXlsx ?? false);
         byte[] stream = wookBook.ExeclTobyte();
-        return File(stream, " application/vnd.ms-excel", execlName);
+        return File(stream, contentType,
+            execlName ?? Guid.NewGuid().ToString());
         //保存到电脑
         //await using FileStream fileStream = new($@"H:\{execlName ?? Guid.NewGuid().ToString()}.xls", FileMode.Create);
         //wookBook.Write(fileStream);

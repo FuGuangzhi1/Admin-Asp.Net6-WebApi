@@ -11,11 +11,14 @@ namespace Common_Fu.ExeclHelper.Exensions
     {
         public static byte[] ExeclTobyte(this IWorkbook workBook)
         {
-            MemoryStream memoryStream = new();
-            workBook.Write(memoryStream);
-            byte[] data = memoryStream.ToArray();
-            memoryStream.Write(data, 0, data.Length);
-            return data;
+            byte[] buffer = null;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                workBook.Write(ms);
+                buffer = ms.GetBuffer();
+                ms.Close();
+            }
+            return buffer;
         }
     }
 }

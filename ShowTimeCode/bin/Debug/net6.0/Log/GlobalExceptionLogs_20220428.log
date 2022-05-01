@@ -1,0 +1,6 @@
+﻿2022-04-28 13:09:25,213| ERROR 
+An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+--------------------------------
+2022-04-28 13:12:26,621| ERROR 
+对象名 'User' 无效。
+--------------------------------
